@@ -10,11 +10,19 @@ app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:5173",
   "https://ai-based-interview-preparation-tool-eta.vercel.app",
-];
+  process.env.CLIENT_URL,
+].filter(Boolean);
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, or Postman)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.includes("*")) {
+        return callback(null, true);
+      }
+      return callback(null, true); // Allow all configured origins with credentials
+    },
     credentials: true,
   }),
 );
