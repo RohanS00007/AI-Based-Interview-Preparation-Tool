@@ -9,8 +9,11 @@ app.use(cookieParser());
 
 const allowedOrigins = [
   "http://localhost:5173",
+  "http://localhost:3000",
+  "https://ai-based-interview-pre-tool.vercel.app",
   "https://ai-based-interview-preparation-tool-eta.vercel.app",
   process.env.CLIENT_URL,
+  process.env.CLIENT_PROD_URL,
 ].filter(Boolean);
 
 app.use(
