@@ -1,5 +1,4 @@
-const mongoos = require("mongodb");
-const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
   username: {

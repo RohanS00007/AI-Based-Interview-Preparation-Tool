@@ -29,7 +29,7 @@ app.use("/api/interview", interviewRouter);
 
 app.get("/test", (req, res) => {
   console.log(req.cookies);
-  res.send("ok");
+  res.send("Server is good.");
 });
 
 module.exports = app;

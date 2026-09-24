@@ -91,6 +91,9 @@ const interviewReportSchema = new mongoose.Schema(
     selfDeclaration: {
       type: String,
     },
+    selfDescription: {
+      type: String,
+    },
     matchScore: {
       type: Number,
       min: 0,
